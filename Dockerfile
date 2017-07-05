@@ -4,7 +4,14 @@ MAINTAINER shawn.yang <shawn.yang@ebaotech.com>
 
 WORKDIR /root
 
+ENV http_proxy 'http://172.18.49.244:3228'
+ENV https_proxy 'http://172.18.49.244:3228'
 # install openssh-server, openjdk and wget
+
+COPY aliyun/sources.list /etc/apt/sources.list
+
+RUN apt-get update
+
 RUN apt-get update && apt-get install -y openssh-server openjdk-7-jdk wget
 
 # install hadoop 2.7.2
