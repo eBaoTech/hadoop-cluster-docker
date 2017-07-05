@@ -20,6 +20,9 @@ RUN wget http://app.ebaotech.com/thirdparty/hadoop/hadoop-2.5.2.tar.gz && \
     mv hadoop-2.5.2 /usr/local/hadoop && \
     rm hadoop-2.5.2.tar.gz
 
+ENV http_proxy ''
+ENV https_proxy ''
+
 # set environment variable
 ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 
 ENV HADOOP_HOME=/usr/local/hadoop 
